@@ -14,7 +14,8 @@ class CreatePagesTable extends Migration
     {
         Schema::create('pages', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('owner');
+            $table->string('recipient_name');
+            $table->string('recipient_email');
             $table->string('message');
             $table->timestamp('expires_on');
             $table->timestamps();
