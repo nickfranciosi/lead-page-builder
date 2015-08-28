@@ -14,3 +14,13 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+$router->group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
+    resource('page', 'PageController');
+    resource('video', 'VideoController');
+});
+
+get('auth/login', 'Auth\AuthController@getLogin');
+post('auth/login', 'Auth\AuthController@postLogin');
+get('auth/logout', 'Auth\AuthController@getLogout');
