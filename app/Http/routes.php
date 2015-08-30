@@ -16,6 +16,8 @@ Route::get('/', function () {
 });
 
 
+get('view/{id}', 'PageViewController@show');
+
 $router->group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
     resource('page', 'PageController');
     resource('video', 'VideoController');

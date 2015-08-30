@@ -4,10 +4,7 @@
 @section('content')
 <h2>Admin Create Page</h2>  
 
-
-<form action="{{ route('admin.page.store') }}" method="POST" role="form">
-
-   @include('partials.forms.page')
-</form>
-
+{!! Form::open(array('route' => 'admin.page.store')) !!}
+    @include('partials.forms.page')
+{!! Form::close() !!}
 @stop

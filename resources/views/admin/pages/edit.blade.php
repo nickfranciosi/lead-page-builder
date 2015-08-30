@@ -4,8 +4,7 @@
 @section('content')
     <h2>Edit Form</h2>
 
-    <form action="">
-        
+    {!! Form::model($page, array('route' => array('admin.page.update', $page->id))) !!}
         @include('partials.forms.page')
-    </form>
+    {!! Form::close() !!}
 @stop

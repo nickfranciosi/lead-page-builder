@@ -1,23 +1,28 @@
-{!! csrf_field() !!}
+
 
 <div class="form-group">
     <label for="recipient_name">Recipient Name:</label>
-    <input type="text" class="form-control" id="recipient_name" name="recipient_name" placeholder="First and Last Name">
+    {!! Form::text('recipient_name', null, ['placeholder' => 'First and Last name', 'class' => 'form-control', 'id' => 'recipient_name']) !!}
 </div>
 
 <div class="form-group">
     <label for="recipient_email">Recipient Email:</label>
-    <input type="text" class="form-control" id="recipient_email" name="recipient_email" placeholder="First and Last Name">
+    {!! Form::email('recipient_email', null, ['placeholder' => 'you@whatever.com', 'class' => 'form-control', 'id' => 'recipient_email']) !!}
+</div>
+
+<div class="form-group">
+    <label for="video_url">Video Url</label>
+    {!! Form::text('video_url', null, ['placeholder' => 'path to vimeo or youtube video', 'class' => 'form-control', 'id' => 'video_url']) !!}
 </div>
 
 <div class="form-group">
         <label for="message">Message:</label>
-        <textarea class="form-control" name="message" id="message"></textarea>
+      {!! Form::textarea('message', null, ['class' => 'form-control', 'id' => 'message']) !!}
 </div>
 
 <div class="form-group">
     <label for="expires_on">Expire Date:</label>
-    <input type="date" name="expires_on" id="expires_on" class="form-control" value="" required="required" title="expires_on">
+    {!! Form::date('expires_on', null, ['class' => 'form-control', 'id' => 'expires_on']) !!}
 </div>
 
 
