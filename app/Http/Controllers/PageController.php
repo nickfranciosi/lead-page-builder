@@ -81,7 +81,9 @@ class PageController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $page = Page::findOrFail($id);
+        $page->update($request->all());
+        return redirect('admin/page');
     }
 
     /**
